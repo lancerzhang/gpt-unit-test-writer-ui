@@ -1,0 +1,10 @@
+<mat-card>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item *ngFor="let job of jobs">
+                <h3 mat-line> {{ job.title }} </h3>
+                <p mat-line> {{ job.description }} </p>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
