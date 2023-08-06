@@ -8,18 +8,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateJobComponent } from './create-job/create-job.component';
 import { JobsListComponent } from './jobs-list/jobs-list.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatListModule } from '@angular/material/list';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateJobComponent,
     JobsListComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    NavbarComponent
   ],
   imports: [
     HttpClientModule,
@@ -27,9 +27,7 @@ import { MatListModule } from '@angular/material/list';
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatListModule,
+    BsDropdownModule.forRoot(),
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }

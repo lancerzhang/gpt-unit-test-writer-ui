@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/">GPT Unit Test Writer</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/create-job">Create</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/jobs-list">List</a>
+            </li>
+        </ul>
+        <div class="dropdown ml-auto" dropdown>
+            <a class="nav-link dropdown-toggle" id="userMenu" role="button" data-toggle="dropdown" dropdownToggle>
+                <i class="fas fa-user"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="userMenu">
+                <a class="dropdown-item" routerLink="/user-info">Your Profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Sign out</a>
+            </div>
+        </div>
+    </div>
+</nav>

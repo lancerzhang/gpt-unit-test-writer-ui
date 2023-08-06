@@ -1,12 +1,14 @@
-<mat-card>
-    <mat-card-content>
-        <mat-list>
-            <mat-list-item>
-                <h3 mat-line>Username: {{ user.name }}</h3>
-            </mat-list-item>
-            <mat-list-item>
-                <p mat-line>Email: {{ user.email }}</p>
-            </mat-list-item>
-        </mat-list>
-    </mat-card-content>
-</mat-card>
+<div class="container user-info-container">
+    <h1 class="title">User Info</h1>
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            <h3 class="user-info-title">Username:</h3>
+            <p class="user-info-detail">{{ user.name }}</p>
+        </li>
+        <li class="list-group-item">
+            <h3 class="user-info-title">Email:</h3>
+            <p class="user-info-detail">{{ user.email }}</p>
+        </li>
+    </ul>
+</div>

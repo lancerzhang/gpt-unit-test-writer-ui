@@ -1,10 +1,10 @@
-<mat-card>
-    <mat-card-content>
-        <mat-list>
-            <mat-list-item *ngFor="let job of jobs">
-                <h3 mat-line> {{ job.title }} </h3>
-                <p mat-line> {{ job.description }} </p>
-            </mat-list-item>
-        </mat-list>
-    </mat-card-content>
-</mat-card>
+<div class="container jobs-list-container">
+    <h1 class="title">Jobs List</h1>
+
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let job of jobs">
+            <h3 class="job-title">{{ job.title }}</h3>
+            <p class="job-description">{{ job.description }}</p>
+        </li>
+    </ul>
+</div>

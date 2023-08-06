@@ -1,17 +1,24 @@
-<mat-card>
-    <mat-card-content>
-        <form>
-            <mat-form-field>
-                <mat-label>Job Title</mat-label>
-                <input matInput placeholder="Job Title">
-            </mat-form-field>
+<div class="container create-job-container">
+    <h1 class="title">Generate Unit Test for the GitHub Repo</h1>
 
-            <mat-form-field>
-                <mat-label>Job Description</mat-label>
-                <textarea matInput placeholder="Job Description"></textarea>
-            </mat-form-field>
+    <form class="create-job-form">
+        <div class="form-group full-width-input">
+            <label for="githubRepo">GitHub Repo</label>
+            <input type="text" class="form-control" id="githubRepo" placeholder="GitHub Repo URL">
+        </div>
 
-            <button mat-raised-button color="primary">Create Job</button>
-        </form>
-    </mat-card-content>
-</mat-card>
+        <div class="form-group short-input">
+            <label for="branch">Branch</label>
+            <input type="text" class="form-control" id="branch" placeholder="Branch">
+        </div>
+
+        <div class="form-check checkbox-input">
+            <input type="checkbox" class="form-check-input" id="cleanWorkspace">
+            <label class="form-check-label" for="cleanWorkspace">Clean Project Workspace</label>
+        </div>
+
+        <div class="button-container text-center">
+            <button type="submit" class="btn btn-primary">Generate</button>
+        </div>
+    </form>
+</div>
