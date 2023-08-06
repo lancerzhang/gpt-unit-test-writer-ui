@@ -8,3 +8,6 @@
 6. change user info and jobs list page
 7. I want to have a top bar navigation, there is 2 function menu "Create" and "List", and there is a user icon on right top, click that will popup a menu, that menu has "Your profile" and "Sign out" options.
 8. When I click the user icon, nothing happen. BTW, I want the user icon align to the right.
+9. I want to put user icon on the page right top.
+10. Now I want to change the job-list page, it’s a table view with pagination, the pagination is return by spring data. Each row has those fields, id, employee id, username, email,  job type(“coverage” & “mutation”), start time, origin score, status(not start, in progress, error, completed), end time, duration, cost (USD).
+11. I want to have a api service, which will load the file “assets/dummy/jobs.json” now.

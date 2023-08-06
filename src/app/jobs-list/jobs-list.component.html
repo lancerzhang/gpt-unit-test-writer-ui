@@ -1,10 +1,41 @@
-<div class="container jobs-list-container">
+<div class="jobs-list-container">
     <h1 class="title">Jobs List</h1>
 
-    <ul class="list-group">
-        <li class="list-group-item" *ngFor="let job of jobs">
-            <h3 class="job-title">{{ job.title }}</h3>
-            <p class="job-description">{{ job.description }}</p>
-        </li>
-    </ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Employee ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Job Type</th>
+                <th>Start Time</th>
+                <th>Origin Score</th>
+                <th>Status</th>
+                <th>End Time</th>
+                <th>End Score</th>
+                <th>Duration (minutes)</th>
+                <th>Cost (USD)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let job of jobsPage.content">
+                <td>{{ job.id }}</td>
+                <td>{{ job.employeeId }}</td>
+                <td>{{ job.username }}</td>
+                <td>{{ job.email }}</td>
+                <td>{{ job.jobType }}</td>
+                <td>{{ job.startTime | date:'short' }}</td>
+                <td>{{ job.originScore }}</td>
+                <td>{{ job.status }}</td>
+                <td>{{ job.endTime | date:'short' }}</td>
+                <td>{{ job.endScore }}</td>
+                <td>{{ job.duration }}</td>
+                <td>{{ job.cost }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <pagination [totalItems]="jobsPage.totalElements" [(ngModel)]="page" (pageChanged)="loadJobs($event)"
+        [itemsPerPage]="jobsPage.size" [maxSize]="5" [boundaryLinks]="true"></pagination>
 </div>

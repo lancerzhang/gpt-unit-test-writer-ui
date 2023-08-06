@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-jobs-list',
@@ -6,16 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./jobs-list.component.scss']
 })
 export class JobsListComponent implements OnInit {
-  jobs = [
-    // Example data; replace with your actual job data
-    { title: 'Software Engineer', description: 'Build amazing things!' },
-    { title: 'Product Manager', description: 'Lead the product to success.' }
-  ];
+  jobsPage: any = {};
+  page: number = 1;
 
-  constructor() { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    // Fetch your jobs data here
+    this.loadJobs();
   }
 
+  loadJobs(event?: any): void {
+    this.apiService.get("/jobs", this.page).subscribe((jobsPage: any) => this.jobsPage = jobsPage);
+  }
 }

@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { of, timer } from 'rxjs';
+import { timer } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { environment } from '../../environments/environment';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ChatApiService {
+export class ApiService {
   openaiConfig: any;
 
   private logoutTimer: any;
@@ -16,7 +16,8 @@ export class ChatApiService {
     this.scheduleLogout();
   }
 
-  getResponse(path: string) {
+
+  get(path: string, page: number) {
     this.scheduleLogout();
 
     if (environment.production) {
@@ -26,9 +27,9 @@ export class ChatApiService {
       return this.http.get(url);
 
     } else {
+      const jsonFilePath = 'assets/dummy/jobs.json';
       // read the dummy data from local file
-      const jobsFile = 'assets/dummy/jobs.json';
-      return of(jobsFile);
+      return this.http.get(jsonFilePath);
     }
   }
 
