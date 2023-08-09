@@ -17,7 +17,7 @@ export class ApiService {
   }
 
 
-  get(path: string, page: number) {
+  get(path: string) {
     this.scheduleLogout();
 
     if (environment.production) {
@@ -27,9 +27,14 @@ export class ApiService {
       return this.http.get(url);
 
     } else {
-      const jsonFilePath = 'assets/dummy/jobs.json';
+      const jobFilePath = 'assets/dummy/job.json';
+      const jobsFilePath = 'assets/dummy/jobs.json';
       // read the dummy data from local file
-      return this.http.get(jsonFilePath);
+      if (path.startsWith("/jobs/")) {
+        return this.http.get(jobFilePath);
+      } else {
+        return this.http.get(jobsFilePath);
+      }
     }
   }
 

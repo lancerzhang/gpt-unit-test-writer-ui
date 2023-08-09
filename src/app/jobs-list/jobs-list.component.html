@@ -5,32 +5,30 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Project ID</th>
                 <th>Employee ID</th>
                 <th>Username</th>
-                <th>Email</th>
                 <th>Job Type</th>
                 <th>Start Time</th>
-                <th>Origin Score</th>
                 <th>Status</th>
-                <th>End Time</th>
+                <th>Origin Score</th>
                 <th>End Score</th>
-                <th>Duration (minutes)</th>
                 <th>Cost (USD)</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let job of jobsPage.content">
-                <td>{{ job.id }}</td>
+                <td>
+                    <a [routerLink]="['/job-detail', job.id]">{{ job.id }}</a>
+                </td>
+                <td>{{ job.projectId }}</td>
                 <td>{{ job.employeeId }}</td>
                 <td>{{ job.username }}</td>
-                <td>{{ job.email }}</td>
                 <td>{{ job.jobType }}</td>
                 <td>{{ job.startTime | date:'short' }}</td>
-                <td>{{ job.originScore }}</td>
                 <td>{{ job.status }}</td>
-                <td>{{ job.endTime | date:'short' }}</td>
+                <td>{{ job.originScore }}</td>
                 <td>{{ job.endScore }}</td>
-                <td>{{ job.duration }}</td>
                 <td>{{ job.cost }}</td>
             </tr>
         </tbody>

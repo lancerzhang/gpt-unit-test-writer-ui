@@ -17,6 +17,6 @@ export class JobsListComponent implements OnInit {
   }
 
   loadJobs(event?: any): void {
-    this.apiService.get("/jobs", this.page).subscribe((jobsPage: any) => this.jobsPage = jobsPage);
+    this.apiService.get("/jobs").subscribe((jobsPage: any) => this.jobsPage = jobsPage);
   }
 }

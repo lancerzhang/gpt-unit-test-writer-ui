@@ -13,6 +13,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { JobDetailComponent } from './job-detail/job-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     CreateJobComponent,
     JobsListComponent,
     UserInfoComponent,
-    NavbarComponent
+    NavbarComponent,
+    JobDetailComponent
   ],
   imports: [
     HttpClientModule,
