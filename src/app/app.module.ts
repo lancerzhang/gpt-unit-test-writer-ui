@@ -11,6 +11,7 @@ import { JobsListComponent } from './jobs-list/jobs-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 
+import { AlertModule } from 'ngx-bootstrap/alert';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { JobDetailComponent } from './job-detail/job-detail.component';
@@ -32,6 +33,7 @@ import { JobDetailComponent } from './job-detail/job-detail.component';
     FormsModule,
     BsDropdownModule.forRoot(),
     PaginationModule.forRoot(),
+    AlertModule.forRoot(),
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }

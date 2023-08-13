@@ -14,6 +14,9 @@ export class CreateJobComponent implements OnInit {
   branch: string = '';
   jobType: string = 'COVERAGE'; // default value or whatever you want
 
+  alertType = 'danger'; // 'danger' for error messages
+  errorMessage: string | null = null; // Stores the error message to display
+
   constructor(private http: HttpClient,
     private router: Router,
     private apiService: ApiService
@@ -42,9 +45,21 @@ export class CreateJobComponent implements OnInit {
       // Redirect to the jobs-list page
       this.router.navigate(['/jobs-list']);
     }, error => {
-      // Handle errors here
-      console.error('Error submitting data:', error);
+      if (error.status === 403) {
+        this.errorMessage = 'Error: User has insufficient budget.';
+      } else if (error.status === 409) {
+        this.errorMessage = 'Error: A job with the given criteria is already in progress or not started.';
+      } else {
+        this.errorMessage = 'Unexpected error occurred. Please try again.';
+        console.error('Error submitting data:', error);
+      }
     });
-
   }
+
+  // This function will be triggered when the alert is closed
+  onClosed(): void {
+    this.errorMessage = null;
+  }
+
+
 }

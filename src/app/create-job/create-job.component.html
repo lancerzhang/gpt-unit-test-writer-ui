@@ -1,3 +1,5 @@
+<alert *ngIf="errorMessage" [type]="alertType" (onClosed)="onClosed()" [dismissible]="true">{{ errorMessage }}</alert>
+
 <div class="container create-job-container">
     <h1 class="title">Generate Unit Test for the GitHub Repo</h1>
 
