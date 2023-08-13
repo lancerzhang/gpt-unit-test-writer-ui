@@ -1,4 +1,4 @@
 export const environment = {
-    useDummy: true,
+    useDummy: false,
     apiBase: 'api/v1'
 };
