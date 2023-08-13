@@ -20,4 +20,7 @@
     <p><strong>Duration:</strong> {{ job.duration }}</p>
     <p><strong>Cost:</strong> {{ job.cost }}</p>
     <p><strong>Lines of Generated Tests:</strong> {{ job.linesOfGenTests }}</p>
+
+    <p><a href="path_to_download_job_log/{{job.id}}" download>Download Job Log</a></p>
+    <p><a href="path_to_download_job_workspace/{{job.id}}" download>Download Job Workspace</a></p>
 </div>
