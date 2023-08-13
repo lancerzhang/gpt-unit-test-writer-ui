@@ -3,22 +3,38 @@
 
     <form class="create-job-form">
         <div class="form-group full-width-input">
-            <label for="githubRepo">GitHub Repo</label>
-            <input type="text" class="form-control" id="githubRepo" placeholder="GitHub Repo URL">
+            <label for="githubRepo">GitHub Repo: </label>
+            <input name="githubRepo" [(ngModel)]="githubRepo" class="form-control" type="text"
+                placeholder="GitHub Repo">
         </div>
 
         <div class="form-group short-input">
-            <label for="branch">Branch</label>
-            <input type="text" class="form-control" id="branch" placeholder="Branch">
+            <label for="branch">Branch: </label>
+            <input name="branch" [(ngModel)]="branch" class="form-control" type="text" placeholder="Branch">
         </div>
 
         <div class="form-check checkbox-input">
-            <input type="checkbox" class="form-check-input" id="cleanWorkspace">
+            <input name="cleanWorkspace" type="checkbox" class="form-check-input" id="cleanWorkspace">
             <label class="form-check-label" for="cleanWorkspace">Clean Project Workspace</label>
         </div>
 
+        <div>
+            <label for="jobType">Job Type: </label>
+            <select name="jobType" id="jobType" [(ngModel)]="jobType" class="form-control">
+                <option value="COVERAGE">Coverage</option>
+                <option value="MUTATION">Mutation</option>
+            </select>
+        </div>
+
         <div class="button-container text-center">
-            <button type="submit" class="btn btn-primary" (click)="onGenerateButtonClick()">Generate</button>
+            <button class="btn btn-primary" (click)="onGenerateButtonClick()">Generate</button>
+        </div>
+
+        <div class="reminder">
+            <p>1. It should be a Java Maven project and should be able to run "mvn test" without any errors.</p>
+            <p>2. The GitHub repos should be publicly readable.</p>
+            <p>3. If you want the changes to be pushed directly to the GitHub repo, grant write access to our system
+                GitHub account.</p>
         </div>
     </form>
 </div>

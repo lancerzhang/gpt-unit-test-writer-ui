@@ -1,19 +1,48 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-create-job',
   templateUrl: './create-job.component.html',
   styleUrls: ['./create-job.component.scss']
 })
-export class CreateJobComponent {
+export class CreateJobComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  githubRepo: string = '';
+  branch: string = '';
+  jobType: string = 'COVERAGE'; // default value or whatever you want
+
+  constructor(private http: HttpClient,
+    private router: Router,
+    private apiService: ApiService
+  ) { }
+
+  ngOnInit(): void {
+    // Loading values from local storage code here...
+  }
 
   onGenerateButtonClick(): void {
-    // Logic to create a job goes here
+    const dataToSubmit = {
+      githubRepo: this.githubRepo,
+      branch: this.branch,
+      jobType: this.jobType
+    };
 
-    // After creating the job, navigate to the jobs-list page
-    this.router.navigate(['/jobs-list']);
+    this.apiService.post(`/jobs/`, dataToSubmit).subscribe((job: any) => {
+      // Handle the server response if needed
+
+      // Save to local storage
+      localStorage.setItem('githubRepo', this.githubRepo);
+      localStorage.setItem('branch', this.branch);
+
+      // Redirect to the jobs-list page
+      this.router.navigate(['/jobs-list']);
+    }, error => {
+      // Handle errors here
+      console.error('Error submitting data:', error);
+    });
+
   }
 }

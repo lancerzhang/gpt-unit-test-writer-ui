@@ -22,3 +22,13 @@
 .checkbox-input {
     margin-bottom: 20px;
 }
+
+.reminder {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #d9534f; // or any other color for reminders
+
+    p {
+        margin: 5px 0;
+    }
+}

@@ -30,11 +30,21 @@ export class ApiService {
         return this.http.get(jobsFilePath);
       }
     } else {
-
-      // make an HTTP request
       const url = `${environment.apiBase}${path}`;
-
       return this.http.get(url);
+    }
+  }
+
+  post(path: string, body: any) {
+    this.scheduleLogout();
+
+    if (environment.useDummy) {
+      const jobFilePath = 'assets/dummy/job.json';
+      // read the dummy data from local file
+      return this.http.get(jobFilePath);
+    } else {
+      const url = `${environment.apiBase}${path}`;
+      return this.http.post(url, body);
     }
   }
 
