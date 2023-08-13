@@ -21,6 +21,8 @@ export class CreateJobComponent implements OnInit {
 
   ngOnInit(): void {
     // Loading values from local storage code here...
+    this.githubRepo = localStorage.getItem('githubRepo') || '';
+    this.branch = localStorage.getItem('branch') || 'master';
   }
 
   onGenerateButtonClick(): void {

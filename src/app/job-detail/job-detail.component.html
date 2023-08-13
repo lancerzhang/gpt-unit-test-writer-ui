@@ -1,18 +1,23 @@
 <div *ngIf="job" class="job-detail">
-    <h2>Job Detail for ID: {{job.id}}</h2>
-    <p><strong>Project ID:</strong> {{job.projectId}}</p>
-    <p><strong>Employee ID:</strong> {{job.employeeId}}</p>
-    <p><strong>Username:</strong> {{job.username}}</p>
-    <p><strong>Email:</strong> {{job.email}}</p>
-    <p><strong>Job Type:</strong> {{job.jobType}}</p>
-    <p><strong>Start Time:</strong> {{job.startTime}}</p>
-    <p><strong>Origin Score:</strong> {{job.originScore}}</p>
-    <p><strong>Status:</strong> {{job.status}}</p>
-    <p><strong>End Time:</strong> {{job.endTime}}</p>
-    <p><strong>End Score:</strong> {{job.endScore}}</p>
-    <p><strong>Duration:</strong> {{job.duration}} minutes</p>
-    <p><strong>Cost:</strong> ${{job.cost}}</p>
-    <p><strong>Lines of generated tests:</strong> {{job.linesOfGenTests}}</p>
-    <p><a href="path_to_download_job_log/{{job.id}}" download>Download Job Log</a></p>
-    <p><a href="path_to_download_job_workspace/{{job.id}}" download>Download Job Workspace</a></p>
+    <h2>Job Detail</h2>
+    <h3>GitHub Details</h3>
+    <p><strong>Repository:</strong> <a [href]="job.githubRepo" target="_blank">{{ job.githubRepo }}</a></p>
+    <p><strong>Branch:</strong> {{ job.branch }}</p>
+
+    <h3>User Information</h3>
+    <p><strong>Name:</strong> {{ job.user.displayName }}</p>
+    <p><strong>Employee ID:</strong> {{ job.user.employeeId }}</p>
+    <p><strong>Email:</strong> {{ job.user.email }}</p>
+    <p><strong>Budget:</strong> {{ job.user.budget }}</p>
+
+    <h3>Job Information</h3>
+    <p><strong>Type:</strong> {{ job.jobType }}</p>
+    <p><strong>Status:</strong> {{ job.status }}</p>
+    <p><strong>Start Time:</strong> {{ job.startTime ? job.startTime : 'N/A' }}</p>
+    <p><strong>End Time:</strong> {{ job.endTime ? job.endTime : 'N/A' }}</p>
+    <p><strong>Origin Score:</strong> {{ job.originScore }}</p>
+    <p><strong>End Score:</strong> {{ job.endScore }}</p>
+    <p><strong>Duration:</strong> {{ job.duration }}</p>
+    <p><strong>Cost:</strong> {{ job.cost }}</p>
+    <p><strong>Lines of Generated Tests:</strong> {{ job.linesOfGenTests }}</p>
 </div>

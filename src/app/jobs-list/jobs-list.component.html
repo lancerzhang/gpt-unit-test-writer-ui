@@ -5,35 +5,36 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Project ID</th>
-                <th>Employee ID</th>
-                <th>Username</th>
+                <th>GitHub Repo</th>
+                <th>Branch</th>
+                <th>User Name</th>
                 <th>Job Type</th>
-                <th>Start Time</th>
                 <th>Status</th>
+                <th>Start Time</th>
                 <th>Origin Score</th>
                 <th>End Score</th>
                 <th>Cost (USD)</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let job of jobsPage.content">
-                <td>
-                    <a [routerLink]="['/job-detail', job.id]">{{ job.id }}</a>
-                </td>
-                <td>{{ job.projectId }}</td>
-                <td>{{ job.employeeId }}</td>
-                <td>{{ job.username }}</td>
+                <td>{{ job.id }}</td>
+                <td><a [href]="job.githubRepo" target="_blank">{{ job.githubRepo }}</a></td>
+                <td>{{ job.branch }}</td>
+                <td>{{ job.user.displayName }}</td>
                 <td>{{ job.jobType }}</td>
-                <td>{{ job.startTime | date:'short' }}</td>
                 <td>{{ job.status }}</td>
+                <td>{{ job.startTime ? job.startTime : 'N/A' }}</td>
                 <td>{{ job.originScore }}</td>
                 <td>{{ job.endScore }}</td>
                 <td>{{ job.cost }}</td>
+                <td>
+                    <a [routerLink]="['/job-detail', job.id]">View Details</a>
+                </td>
             </tr>
         </tbody>
     </table>
-
     <pagination [totalItems]="jobsPage.totalElements" [(ngModel)]="page" (pageChanged)="loadJobs($event)"
         [itemsPerPage]="jobsPage.size" [maxSize]="5" [boundaryLinks]="true"></pagination>
 </div>
