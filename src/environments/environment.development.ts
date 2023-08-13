@@ -1,4 +1,4 @@
 export const environment = {
-    production: false,
+    useDummy: false,
     apiBase: 'http://localhost:8080/api/v1'
 };

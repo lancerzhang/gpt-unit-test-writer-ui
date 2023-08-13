@@ -20,13 +20,7 @@ export class ApiService {
   get(path: string) {
     this.scheduleLogout();
 
-    if (environment.production) {
-      // make an HTTP request
-      const url = `${environment.apiBase}${path}`;
-
-      return this.http.get(url);
-
-    } else {
+    if (environment.useDummy) {
       const jobFilePath = 'assets/dummy/job.json';
       const jobsFilePath = 'assets/dummy/jobs.json';
       // read the dummy data from local file
@@ -35,6 +29,12 @@ export class ApiService {
       } else {
         return this.http.get(jobsFilePath);
       }
+    } else {
+
+      // make an HTTP request
+      const url = `${environment.apiBase}${path}`;
+
+      return this.http.get(url);
     }
   }
 
