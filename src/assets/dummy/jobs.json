@@ -15,10 +15,10 @@
             },
             "jobType": "COVERAGE",
             "startTime": "2023-08-01T09:00:00Z",
-            "originScore": 5,
+            "originScore": 0.05,
             "status": "COMPLETED",
             "endTime": "2023-08-01T11:00:00Z",
-            "endScore": 57,
+            "endScore": 0.57,
             "duration": 120,
             "cost": 5.08
         },
@@ -37,12 +37,12 @@
             },
             "jobType": "MUTATION",
             "startTime": "2023-08-02T09:00:00Z",
-            "originScore": 61,
+            "originScore": 0.61,
             "status": "IN_PROGRESS",
             "endTime": null,
             "endScore": null,
             "duration": null,
-            "cost": null
+            "cost": 0.0
         },
         {
             "id": 3,
@@ -59,10 +59,10 @@
             },
             "jobType": "COVERAGE",
             "startTime": "2023-08-03T09:00:00Z",
-            "originScore": 38,
+            "originScore": 0.38,
             "status": "COMPLETED",
             "endTime": "2023-08-03T12:00:00Z",
-            "endScore": 62,
+            "endScore": 0.62,
             "duration": 180,
             "cost": 12.60
         },
@@ -86,7 +86,7 @@
             "endTime": null,
             "endScore": null,
             "duration": null,
-            "cost": null
+            "cost": 0.0
         },
         {
             "id": 5,
@@ -103,10 +103,10 @@
             },
             "jobType": "COVERAGE",
             "startTime": "2023-08-05T09:00:00Z",
-            "originScore": 65,
+            "originScore": 0.65,
             "status": "ERROR",
             "endTime": "2023-08-05T10:00:00Z",
-            "endScore": 77,
+            "endScore": 0.77,
             "duration": 60,
             "cost": 13.74
         }

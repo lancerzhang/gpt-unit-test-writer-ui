@@ -13,10 +13,10 @@
     },
     "jobType": "COVERAGE",
     "startTime": "2023-08-01T09:00:00Z",
-    "originScore": 5,
+    "originScore": 0.05,
     "status": "COMPLETED",
     "endTime": "2023-08-01T11:00:00Z",
-    "endScore": 57,
+    "endScore": 0.57,
     "duration": 120,
     "cost": 5.08,
     "linesOfGenTests": 23

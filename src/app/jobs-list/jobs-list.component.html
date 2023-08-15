@@ -13,7 +13,7 @@
                 <th>Start Time</th>
                 <th>Origin Score</th>
                 <th>End Score</th>
-                <th>Cost (USD)</th>
+                <th>Cost</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -26,9 +26,9 @@
                 <td>{{ job.jobType }}</td>
                 <td>{{ job.status }}</td>
                 <td>{{ job.startTime ? job.startTime : 'N/A' }}</td>
-                <td>{{ job.originScore }}</td>
-                <td>{{ job.endScore }}</td>
-                <td>{{ job.cost }}</td>
+                <td>{{ job.originScore | percent }}</td>
+                <td>{{ job.endScore | percent }}</td>
+                <td>${{ job.cost }}</td>
                 <td>
                     <a [routerLink]="['/job-detail', job.id]">View Details</a>
                 </td>

@@ -18,7 +18,7 @@
     <p><strong>Origin Score:</strong> {{ job.originScore | percent }}</p>
     <p><strong>Duration:</strong> {{ job.duration }} seconds</p>
     <p><strong>Cost:</strong> ${{ job.cost | number: '1.2-2' }}</p>
-    <p><strong>End Score:</strong> {{ job.endScore }}</p>
+    <p><strong>End Score:</strong> {{ job.endScore | percent }}</p>
     <p><strong>Lines of Generated Tests:</strong> {{ job.linesOfGenTests }}</p>
     <p><strong>Remark:</strong> {{ job.remark }}</p>
 
