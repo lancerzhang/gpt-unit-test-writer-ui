@@ -15,11 +15,6 @@
             <input name="branch" [(ngModel)]="branch" class="form-control" type="text" placeholder="Branch">
         </div>
 
-        <div class="form-check checkbox-input">
-            <input name="cleanWorkspace" type="checkbox" class="form-check-input" id="cleanWorkspace">
-            <label class="form-check-label" for="cleanWorkspace">Clean Project Workspace</label>
-        </div>
-
         <div>
             <label for="jobType">Job Type: </label>
             <select name="jobType" id="jobType" [(ngModel)]="jobType" class="form-control">
@@ -28,7 +23,12 @@
             </select>
         </div>
 
-        <div class="button-container text-center button-box">
+        <div class="form-check checkbox-input form-item">
+            <input name="forNewCode" type="checkbox" class="form-check-input" id="forNewCode">
+            <label class="form-check-label" for="forNewCode">For new code only (TODO)</label>
+        </div>
+
+        <div class="button-container text-center form-item">
             <button class="btn btn-primary" (click)="onGenerateButtonClick()">Generate</button>
         </div>
 
